@@ -1,0 +1,113 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: table;
+    width: 100%;
+}
+
+.navbar a {
+    display: table-cell;
+    text-align: center ;
+    width: 30px;
+    height: 40px; 
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+.navbar a:hover {
+    background-color: #009e00;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items:normal;
+    background-color: #222;
+    padding: 20px;
+    min-width: 1000px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.side-strip {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background-color: #111;
+    z-index: -1;
+}
+
+.left-strip {
+    left: 0;
+}
+
+.right-strip {
+    right: 0;
+}
+body input{
+    background-color: #444;
+    border: 1px solid #666;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 200px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body input:focus {
+    border-color: #888;
+    outline: none;
+}
+
+.fieldground{
+    background: #1b1b1b;
+    border: 1px solid #666;
+    padding: 10px;
+}
+.accept{
+    background-color: #444;
+    border: 1px solid #666;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 200px;
+    box-sizing: border-box;
+    font-size: 16px;
+    -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.accept:hover{
+    -webkit-transform: translate(10px);
+    transform: translate(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
+}

@@ -1,0 +1,26 @@
+{%extends 'face.html'%}
+{%block title%}Регистрация{%endblock%}
+{%block content%}
+
+<div class="fieldground">
+    <h2>Для входа введите Почту/Пароль</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <div>
+                <input class="email" type="text" placeholder="Логин" name="username" ></input>
+            </div>
+            <div>
+                <input class="password" type="password" placeholder="Пароль" name="password"></input>
+            </div>
+            <div>
+                <button name="Подтвердить" class="accept" id="accept">Подтвердить</button>
+    
+                <a href="{%url 'register' %}" class="accept">Создать новый аккаунт</a>
+            </div>
+            {{form.errors}}
+        </form>
+    </div>
+</div>
+
+{%endblock%}

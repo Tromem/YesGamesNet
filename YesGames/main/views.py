@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def YesGames(req):
+   return render(req,'main.html')

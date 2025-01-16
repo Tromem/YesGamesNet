@@ -1,0 +1,20 @@
+{%extends 'face.html'%}
+{%block title%}Регистрация{%endblock%}
+{%block content%}
+
+<div class="fieldground">
+    <h2>Для регистрации заполните поля</h2>
+    <div>
+        <form  method="POST">
+            {% csrf_token %}
+            
+            {{form}}
+           
+                <button name="Подтвердить" type="submit" id="accept">Подтвердить</button>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,11 @@
+{%extends 'face.html'%}
+{%block title%}Ваш профиль{%endblock%}
+{%block content%}
+
+Никнейм = {{ user.username }}
+<br>
+<form action="{%url 'logout'%}" method="post">
+    {% csrf_token%}
+    <button type="submit" class="btn-success">Выход с аккаунта</button>
+</form>
+{%endblock%}

@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name ='viewport' content="width=device-width,initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={% static "css/styles.css" %}>
     
@@ -11,22 +12,60 @@
     <title>{%block title%}Баг{%endblock%}</title>
 </head>
 <body>
+    <script>
+        if(window.history.replaceState){
+            window.history.replaceState(null,null,window.location.href);
+        }
+        
+    </script> 
+   
+   
     <div class="navbar">
-        <a href={% url 'main' %}>YesGames</a>
-        <a href="#">Товары</a> 
-        <a href="#">Корзина </a>
-        <a href={% url "profile" %} >Профиль </a>
+        <div><a href={% url 'main' %}> <h2>YesGames</h2> </a> </div>
+        
+        <div class="position">
+            <div class="position">
+                <a href="#"><h2>Ключи</h2></a> 
+            </div> 
+            <div class="position">
+                <a href="#"><h2>Аккаунты</h2> </a> 
+           </div>
+        </div>
+           
+        {% if request.user.is_authenticated %}
+        
+        {% if user.userpic %}
+        <div class="userpic">
+
+            <a href="{% url "profile" %}" id="useracc">
+                <img src="{{user.userpic.url}} " style="width: 50px; height: 50px;" alt="">  </a>
+            
+            {%else %}
+            
+            <a href="{% url 'profile' %}"><h1>{{user.username}}</h1> </a>
+            
+        
+            {%endif%}
+            
+            {%else%}
+            
+            <a href={% url "profile" %} ><h3>Войти|Регистрация </h3> </a>
+        
+            {%endif%}
+        </div>
     </div>
 
     <div class="content">
         {%block content %} {%endblock%}
+        
     </div>
 
     <div class="footer">
-        <p>Все права защищены &copy; 2024</p>
+        
     </div>
 
     <div class="side-strip left-strip"></div>
     <div class="side-strip right-strip"></div>
+   
 
 </html>

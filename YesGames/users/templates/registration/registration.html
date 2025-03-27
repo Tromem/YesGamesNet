@@ -5,14 +5,18 @@
 <div class="fieldground">
     <h2>Для регистрации заполните поля</h2>
     <div>
-        <form  method="POST">
+        <form  method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            <input name="username" placeholder="Имя">
+            <input name="password1" placeholder="Пароль">
+            <input name="password2" placeholder="Повторите пароль">
+            <input name ='userpic' type="file"  placeholder="Фото" required>
             
-            {{form}}
-           
-                <button name="Подтвердить" type="submit" id="accept">Подтвердить</button>
-            </div>
-        </form>
+            
+            <button name="Подтвердить" type="submit" id="accept">Подтвердить</button>
+            {{form.errors}}
+            </form>
+        </div>
         
     </div>
 </div>

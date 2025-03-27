@@ -1,5 +1,5 @@
 {%extends 'face.html'%}
-{%block title%}Ваш профиль{%endblock%}
+{%block title%} {{target_user.username}} {%endblock%}
 {%block content%}
 
 
@@ -8,24 +8,21 @@
 <div>
     <div class="position">
         <h1>
-                {{user.username}}  
+                {{Buyer.username}}  
         </h1>
     
-        {%if user.userpic %}
-        <img src="{{user.userpic.url}}" style="height: 150px; width: 150px;" alt=""> 
+        {%if Buyer.userpic %}
+        <img src="{{Buyer.userpic.url}}" style="height: 150px; width: 150px;" alt=""> 
         {%else%}
         <img style="height: 150px; width: 150px;" alt=""> 
         {%endif%}
         
-        <form action="{%url 'logout'%}" method="post">
-            {% csrf_token%}
-            <button type="submit" class="btn">Выход с аккаунта</button>
-        </form>   
+        
     
     </div>
     <div class="position" id="overviev" > 
-        {%if user.overviev %} 
-       {{user.overviev}} 
+        {%if Buyer.overviev %} 
+       {{Buyer.overviev}} 
        {%else%}
        Описание отсуствует 
        {%endif%}
@@ -33,11 +30,15 @@
 </div>
 
 
+
+
+
 <div><br></div>
 
 <hr>
 
 <div class="sendcomment">
+
 </div>
 
 <form method="post" class="block-comment">
@@ -45,11 +46,14 @@
     {% csrf_token%}
         
        <div>
-           <label for="sendcomment">Создать комментарий:</label>
+          
+        <label for="sendcomment">Создать комментарий:</label>
            <textarea type="text" name="text" id="sendcomment"></textarea>
            <button class="btn" type="submit">Отправить</button>
-       </div>
+       
+        </div>
 </form>   
+
 
 <div class="blockcomment">
     

@@ -1,49 +1,53 @@
-
+*{
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    background-color: #1a1a1a;
+    min-height: 100;
+    background: url('phone.png');
+    background-repeat:no-repeat;
+    background-size:cover;
     color: #f1f1f1;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .navbar {
     background-color: #333;
     color: white;
-    padding: 15px;
-    display: table;
-    width: 100%;
+    display: flex;
+    min-width: 100%;
 }
 
 .navbar a {
-    display: table-cell;
+    display: inline-block;
     text-align: center ;
-    width: 30px;
-    height: 40px; 
-    padding: 0;
+    width: 10%;
+    position: relative;
+    left: 50px;
+    height: 5%; 
+    padding-right: 15px;
     text-decoration: none;
     color: white;
     transition: background-color 0.3s;
     box-sizing: border-box;
 }
 
-.navbar a:hover {
-    background-color: #009e00;
-}
+
+
 
 .content {
-    flex: 1;
-    display: flex;
+    
     justify-content: center;
     align-items:normal;
     background-color: #222;
     padding: 20px;
     min-width: 1000px;
     max-width: 1000px;
+    min-height: 100vh;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -110,4 +114,61 @@ body input:focus {
     -webkit-transform: translate(10px);
     transform: translate(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
+}
+
+#useracc{
+    width: 15%;
+    height: 15%;
+}
+
+.comments{
+    margin: 10px;
+    margin-top: 10px;
+    min-width: 50%;
+    background-color: #3b3b3b;
+}
+.blockcomment{
+
+    background-color: #111;
+    min-width: 900px;
+    min-height: 150%;
+}
+#sendcomment{
+    color: aliceblue;
+    height: 50px;
+    min-width: 900px;
+    resize: none;
+    background-color: #1b1b1b;
+    
+}
+.btn {
+    border-radius: 10px;
+    color: white;
+    transition: .2s linear;
+    background: #646464;
+    height: 50px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0 2px rgb(41, 41, 41), 0 0 0 4px #ebebeb;
+}
+
+.userpic{
+    position: relative;
+    left: 50%;
+    font-size: 5px;
+    top: 6px;
+}
+.position{
+    position: relative;
+    display: inline-block;
+}
+#overviev{
+    background-color: #333;
+    position: relative;
+    top: -200px;
+    left: 5px;
+    min-width: 700px;
+    height: 300px;
+    border-radius: 10px;
 }

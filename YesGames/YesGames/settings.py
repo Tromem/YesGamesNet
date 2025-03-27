@@ -1,3 +1,4 @@
+import os
 """
 Django settings for YesGames project.
 
@@ -127,6 +128,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = BASE_DIR
+MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = reverse_lazy("profile")
 LOGOUT_REDIRECT_URL = reverse_lazy('profile')
